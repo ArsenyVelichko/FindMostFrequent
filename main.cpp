@@ -10,19 +10,21 @@ int findMostFrequent(const std::vector<int>& numbers) {
         throw std::invalid_argument("Empty numbers vector");
     }
 
-    int fastIt = 0;
-    int slowIt = 0;
-    while (fastIt < numbers.size()) {
-        if (numbers[slowIt] != numbers[fastIt]) {
-            if (numbers[slowIt + 1] != numbers[slowIt]) {
-                slowIt = fastIt;
-            } else {
-                slowIt++;
+    int currNumber = numbers[0];
+    int occurNum = 0;
+    for (int number : numbers) {
+        if (number == currNumber) {
+            occurNum++;
+        } else {
+            occurNum--;
+
+            if (occurNum == 0) {
+                currNumber = number;
+                occurNum = 1;
             }
         }
-        fastIt++;
     }
-    return numbers[slowIt];
+    return currNumber;
 }
 
 int main() {
