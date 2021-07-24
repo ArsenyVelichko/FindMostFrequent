@@ -15,7 +15,6 @@ int findMostFrequent(const std::vector<int>& numbers) {
     for (int number : numbers) {
         if (occurNum == 0) {
             currNumber = number;
-            occurNum = 1;
         }
 
         if (number == currNumber) {
