@@ -13,15 +13,15 @@ int findMostFrequent(const std::vector<int>& numbers) {
     int currNumber = numbers[0];
     int occurNum = 0;
     for (int number : numbers) {
+        if (occurNum == 0) {
+            currNumber = number;
+            occurNum = 1;
+        }
+
         if (number == currNumber) {
             occurNum++;
         } else {
             occurNum--;
-
-            if (occurNum == 0) {
-                currNumber = number;
-                occurNum = 1;
-            }
         }
     }
     return currNumber;
