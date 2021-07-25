@@ -1,4 +1,4 @@
-# FindMostFrequent
+# Majority Element
 The solution of the problem from my classmate's interview at the Сomputer Sience Center. 
 
 Problem conditions:
